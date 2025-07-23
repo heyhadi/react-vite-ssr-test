@@ -1,0 +1,86 @@
+// Login.scss
+.app {
+  min-height: 100vh;
+  display: flex;
+  
+  .bg-theme {
+    background: linear-gradient(135deg, #4c6ef5 0%, #364fc7 100%);
+    position: relative;
+    
+    .login-logo {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+    
+    .copyright-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.875rem;
+      margin-top: 2rem;
+      font-weight: 300;
+    }
+  }
+  
+  .w-50 {
+    width: 50% !important;
+    
+    &:last-child {
+      padding: 2rem;
+      
+      .w-75 {
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  }
+  
+  .large-4x {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    
+    .w-50 {
+      width: 100% !important;
+      min-height: 50vh;
+      
+      &:first-child {
+        min-height: 40vh;
+      }
+      
+      &:last-child {
+        min-height: 60vh;
+        padding: 1rem;
+        
+        .w-75 {
+          max-width: 100%;
+        }
+      }
+    }
+    
+    .large-4x {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .bg-theme {
+      .login-logo {
+        max-width: 150px;
+        margin-bottom: 1rem;
+      }
+      
+      .copyright-text {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
