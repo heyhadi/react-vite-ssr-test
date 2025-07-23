@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LoginForm from "../../components/LoginForm/loginForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
 import "./Login.scss";
 
 interface LoginPageProps {
