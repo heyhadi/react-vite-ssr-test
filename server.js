@@ -74,8 +74,8 @@ app.post('/api/login', async (req, res) => {
       .json({ message: 'Username and password are required' })
   }
 
-  const authusername = ''
-  const authpassword = ''
+  const authusername = process.env.AUTH_USERNAME || ''
+  const authpassword = process.env.AUTH_PASSWORD || ''
 
   try {
     // Prepare Basic Auth header
