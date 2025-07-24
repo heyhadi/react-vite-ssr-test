@@ -125,8 +125,7 @@ app.post('/api/login', async (req, res) => {
 })
 
 // Serve HTML
-// "*home" is Express 5.x syntax for matching all routes
-app.use('*all', async (req, res) => {
+app.use('*', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '')
 
