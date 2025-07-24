@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises' // NodeJS async file system module, 'interact' static files
 import express from 'express' // Express is NodeJS library for building api
+import 'dotenv/config'; 
 
 /**
   This file is used to set up a NodeJS Express server to handle SSR for our React application. It dynamically selects the appropriate SSR render function and template based on the environment (development or production) and serves the rendered HTML to clients upon request.
@@ -75,6 +76,7 @@ app.post('/api/login', async (req, res) => {
       .status(400)
       .json({ message: 'Username and password are required' })
   }
+  console.log(process.env.AUTH_USERNAME);
 
   const authusername = process.env.AUTH_USERNAME || ''
   const authpassword = process.env.AUTH_PASSWORD || ''
@@ -102,7 +104,7 @@ app.post('/api/login', async (req, res) => {
     )
 
     const data = await response.json()
-    console.log('Login response:', data)
+    console.log('Login response:', response)
 
     if (!response.ok) {
       return res
