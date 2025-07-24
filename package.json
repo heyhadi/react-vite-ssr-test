@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run build:client && npm run build:server && npm run postbuild",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node server"
+    "preview": "cross-env NODE_ENV=production node server",
+    "postbuild": "chmod +x postbuild.sh && ./postbuild.sh"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.3.4",
