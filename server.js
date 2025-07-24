@@ -23,6 +23,11 @@ const ssrManifest = isProduction
 // Create http server
 const app = express()
 
+
+// Required middleware
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 // Add Vite or respective production middlewares
 let vite
 if (!isProduction) {
@@ -59,9 +64,6 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'API is working!' })
 })
 
-// Required middleware
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
 
 // Example /api/login route
 app.post('/api/login', async (req, res) => {
@@ -125,7 +127,7 @@ app.post('/api/login', async (req, res) => {
 })
 
 // Serve HTML
-app.use('*', async (req, res) => {
+app.use('*all', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '')
 
