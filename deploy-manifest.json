@@ -39,7 +39,7 @@
     {
       "name": "default",
       "runtime": "nodejs20.x",
-      "entrypoint": "server/server.js"
+      "entrypoint": "server/entry-server.js"
     }
   ]
 }
