@@ -16,7 +16,7 @@
     "@vitejs/plugin-react-swc": "3.8.0",
     "bootstrap": "^5.3.7",
     "compression": "1.7.5",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.1.0",
     "dotenv": "^17.4.2",
     "express": "5.0.1",
     "react": "19.0.0",
